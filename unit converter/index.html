@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Unit Converter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="data">
+            <h1>Metric/Imperial unit conversion</h1>
+            <div class="input-container" id="unit-data">
+                <label for="input"></label>
+                <input type="number" id="input" oninput="converter(this.value)" onchange="converter(this.value)" placeholder="0">
+            </div>
+        </div>
+        <div class="result">
+            <h2>Lenght (Meter/Feet)</h2>
+            <div class="flex-container">
+                <p id="meter">0 meters = 0 feet</p>
+                <hr>
+                <p id="feet">0 feet = 0 meters</p>
+            </div>
+            <h2>Volume (Liters/Gallons)</h2>
+            <div class="flex-container">
+                <p id="liter">0 liters = 0 gallons</p>
+                <hr>
+                <p id="gallon">0 gallons = 0 liters</p>
+            </div>
+            <h2>Mass (Kilograms/Pounds)</h2>
+            <div class="flex-container">
+                <p id="kilo">0 kilos = 0 pounds</p>
+                <hr>
+                <p id="pound">0 pounds = 0 kilos</p>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
