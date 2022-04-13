@@ -17,35 +17,59 @@
             <h1 class="title">Invoice creator</h1>
             <p>Thanks for choosing GoodCorp, LLC!</p>
         </div>
-        <div class="body-container">
-            <div class="btn-container">
-                <button class="btn btn-middle" id="WashCarBtn">Wash Car: $10</button>
-                <button class="btn btn-middle" id="MowLawnBtn">Mow Lawn: $20</button>
-                <button class="btn btn-middle" id="PullWeedsBtn">Pull Weeds: $30</button>
-            </div>
-            <div class="expenses-container">
-                <div class="body-col">
-                    <h2>TASK</h2>
-                    <p>Wash Car</p><button class="btn-small" id="removeBtnOne">Remove</button><br>
-                    <p>Mow Lawn</p><button class="btn-small" id="removeBtnTwo">Remove</button><br>
-                    <p>Pull Weeds</p><button class="btn-small" id="removeBtnThree">Remove</button><br>
+        <div class="spacing-container">
+            <div class="body-container">
+                <div class="btn-container">
+                    <button class="btn btn-middle" id="washCarBtn">Wash Car: $10</button>
+                    <button class="btn btn-middle" id="mowLawnBtn">Mow Lawn: $20</button>
+                    <button class="btn btn-middle" id="pullWeedsBtn">Pull Weeds: $30</button>
                 </div>
-                <div class="body-col">
-                    <h2>TOTAL</h2>
-                    <span>$</span><p>10</p><br>
-                    <span>$</span><p>20</p><br>
-                    <span>$</span><p>30</p><br>
+                <div class="expenses-container">
+                    <div class="title-expenses-container">
+                        <h2>TASK</h2>
+                        <h2>TOTAL</h2>
+                    </div>
+                    <div id="serviceOne" class="service-container">
+                        <div>
+                            <p>Wash Car</p>
+                            <button class="btn-small" id="removeBtnOne">Remove</button>
+                        </div>
+                        <div>
+                            <span>$</span>
+                            <p id="priceOne">10</p>
+                        </div>
+                    </div>
+                    <div id="serviceTwo" class="service-container">
+                        <div>
+                            <p>Mow Lawn</p>
+                            <button class="btn-small" id="removeBtnTwo">Remove</button>
+                        </div>
+                        <div>
+                            <span>$</span>
+                            <p id="price">20</p>
+                        </div>
+                    </div>
+                    <div id="serviceThree" class="service-container">
+                        <div>
+                            <p>Pull Weeds</p>
+                            <button class="btn-small" id="removeBtnThree">Remove</button>
+                        </div>
+                        <div>
+                            <span>$</span>
+                            <p id="priceThree">30</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr>
             <div class="sum-container">
                 <div class="sum-col">
                     <h2>NOTES</h2>
-                    <p>We accept cash- credit card, or Paypal</p>
+                    <p class="note-text">We accept cash- credit card, or Paypal</p>
                 </div>
                 <div class="sum-col">
                     <h2>TOTAL AMOUNT</h2>
-                    <span>$0</span>
+                    <p class="total-amount" id="totalAmount"></p>
                 </div>
             </div>
             <button class="btn btn-big" id="sendBtn"><i class="fa-solid fa-envelope"></i> Send Invoice</button>
