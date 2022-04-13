@@ -100,6 +100,10 @@ h1, h2, p {
     margin-top: var(--spacing);
 }
 
+.sum-col+.sum-col {
+    text-align: right;
+}
+
 .sum-col p {
     margin-top: 1.2em;
     font-size: .8rem;
@@ -108,9 +112,6 @@ h1, h2, p {
 .sum-col span {
     font-size: 2rem;
 }
-
-
-
 
 /*
     BUTTONS
