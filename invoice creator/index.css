@@ -36,6 +36,10 @@ h1, h2, p {
     border-radius: var(--border-radius);
 }
 
+.spacing-container {
+    margin: var(--spacing);
+}
+
 .title-container {
     padding-block: 5em;
     text-align: center;
@@ -53,10 +57,6 @@ h1, h2, p {
     font-size: 1.1rem;
 }
 
-.body-container {
-    padding: var(--spacing);
-}
-
 .body-container h2 {
     font-size: .8rem;
     font-weight: 500;
@@ -70,47 +70,65 @@ h1, h2, p {
 
 .expenses-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100px;
 }
 
 .expenses-container p {
     display: inline-block;
 }
 
-.body-col p {
-    margin-top: 1.7em;
+.title-expenses-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service-container p {
+    margin-top: 1.5em;
     margin-right: 1em;
     font-weight: 800;
     font-size: 1.3rem;
 }
 
-.body-col p:last-of-type {
-    margin-bottom: 1.7em;
+.service-container p:last-of-type {
+    margin-bottom: 1.5em;
 }
 
-.body-col span {
+.service-container span {
     color: var(--font-light-transparent);
     font-size: 1.3rem;
     margin-right: .1em;
 }
 
+#serviceOne,
+#serviceTwo,
+#serviceThree {
+    visibility: hidden;
+}
+
 .sum-container {
+    margin-top: var(--spacing);
     display: flex;
     justify-content: space-between;
-    margin-top: var(--spacing);
 }
 
-.sum-col+.sum-col {
-    text-align: right;
+.sum-col h2 {
+    font-size: 1rem;
+    margin-bottom: 1em;
 }
 
-.sum-col p {
-    margin-top: 1.2em;
+.note-text {
     font-size: .8rem;
 }
 
-.sum-col span {
+.total-amount {
     font-size: 2rem;
+    text-align: right;
 }
 
 /*
@@ -137,7 +155,6 @@ h1, h2, p {
 }
 
 .btn-small {
-    /* visibility: hidden; */
     background-color: inherit;
     border: none;
     outline: none;
@@ -149,6 +166,7 @@ h1, h2, p {
 .btn-small:hover,
 .btn-small:focus {
     cursor: pointer;
+    opacity: .95;
 }
 
 .btn-middle {
@@ -156,7 +174,7 @@ h1, h2, p {
 }
 
 .btn-big {
-    margin-top: var(--spacing);
+    margin-block: var(--spacing);
     width: 100%;
     background-color: var(--bg-light);
     color: var(--font-light);
