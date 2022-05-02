@@ -119,6 +119,7 @@ hr {
 }
 
 .pass-text {
+    width: 100%;
     border: none;
     outline: none;
     background-color: inherit;
@@ -169,4 +170,15 @@ tooltip
 .tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+}
+
+@media (max-width: 750px) {
+    .box-foot__text {
+        margin-inline: auto;
+        width: 80%;
+        margin-top: 2em; 
+    }
+    .btn {
+        width: 80%;
+    }
 }
