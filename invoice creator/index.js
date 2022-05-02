@@ -1,5 +1,3 @@
-const services = [];
-
 const washCarBtn = document.getElementById("washCarBtn");
 const mowLawnBtn = document.getElementById("mowLawnBtn");
 const pullWeedsBtn = document.getElementById("pullWeedsBtn");
@@ -14,69 +12,94 @@ const removeBtnThree = document.getElementById("removeBtnThree");
 
 const sendBtn = document.getElementById("sendBtn");
 
-
 const totalAmount = document.getElementById("totalAmount");
-totalAmount.textContent = `$0`;
 
-// washCarBtn.disabled = false;
-// mowLawnBtn.disabled = false;
-// pullWeedsBtn.disabled = false;
+washCarBtn.disabled = false;
+mowLawnBtn.disabled = false;
+pullWeedsBtn.disabled = false;
 
-const calTotal = (priceOne, priceTwo, priceThree) => {
-    return  totalAmount.textContent = priceOne + priceTwo + priceThree;
+const addVisibility = (serviceName, serviceBtn) => {
+    serviceName.classList.remove("visibility");
+    serviceBtn.disabled = true;
+};
+
+const removeVisibility = (serviceName, serviceBtn) => {
+    serviceName.classList.add("visibility");
+    serviceBtn.disabled = false;
+};
+
+// add-service buttons
+
+let serviceList = [];
+
+const addService = (serviceName, serviceBtn, serviceText, servicePrice) => {
+    addVisibility(serviceName, serviceBtn);
+    totalPriceSum(serviceText, servicePrice);
+};
+
+const removeService = (serviceName, serviceBtn, serviceText, servicePrice) => {
+    removeVisibility(serviceName, serviceBtn);
+    totalPriceSum(serviceText, servicePrice);
+};
+
+const totalPriceSum = (serviceText, servicePrice) => {
+    serviceList.push({name: serviceText, price: servicePrice});
+
+    const totalPrice = serviceList.reduce ((total, item) => {
+        return total + item.price;
+    }, 0);
+
+    totalAmount.textContent = `$${totalPrice}`
 }
 
 washCarBtn.addEventListener("click", () => {
-    washCarBtn.disabled = true;
-    services.push("Wash Car");
-    console.log(services);
-    serviceOne.style.visibility = "visible";
-    calTotal(10, 0, 0)
-})
+    serviceText = "Wash Car";
+    servicePrice = 10;
+    addService(serviceOne, washCarBtn, serviceText, servicePrice);
+});
 
 mowLawnBtn.addEventListener("click", () => {
-    mowLawnBtn.disabled = true;
-    services.push("Mow Lawn");
-    console.log(services);
-    serviceTwo.style.visibility = "visible";
-    calTotal(0, 20, 0)
-})
+    serviceText = "Mow Lawn";
+    servicePrice = 20;
+    addService(serviceTwo, mowLawnBtn, serviceText, servicePrice);
+});
 
 pullWeedsBtn.addEventListener("click", () => {
-    pullWeedsBtn.disabled = true;
-    services.push("Pull Weeds");
-    console.log(services);
-    serviceThree.style.visibility = "visible";
-    calTotal(0, 0, 30)
-})
+    serviceText = "Pull Weeds";
+    servicePrice = 30;
+    addService(serviceThree, pullWeedsBtn, serviceText, servicePrice);
+});
 
-// remove buttons
+// remove-service buttons
 
 removeBtnOne.addEventListener("click", () => {
-    serviceOne.style.visibility = "hidden";
-    washCarBtn.disabled = false;
-})
+    serviceText = "";
+    servicePrice = -10;
+    removeService(serviceOne, washCarBtn, serviceText, servicePrice);
+});
 
 removeBtnTwo.addEventListener("click", () => {
-    serviceTwo.style.visibility = "hidden";
-    mowLawnBtn.disabled = false;
-})
+    serviceText = "";
+    servicePrice = -20;
+    removeService(serviceTwo, mowLawnBtn, serviceText, servicePrice);
+});
 
 removeBtnThree.addEventListener("click", () => {
-    serviceThree.style.visibility = "hidden";
-    pullWeedsBtn.disabled = false;
-})
+    serviceText = "";
+    servicePrice = -30;
+    removeService(serviceThree, pullWeedsBtn, serviceText, servicePrice);
+});
 
-// send button
+// send-service button
 
 sendBtn.addEventListener("click", () => {
-    serviceOne.style.visibility = "hidden";
-    washCarBtn.disabled = false;
-    serviceTwo.style.visibility = "hidden";
-    mowLawnBtn.disabled = false;
-    serviceThree.style.visibility = "hidden";
-    pullWeedsBtn.disabled = false;
-    totalAmount.textContent = `$0`;
-})
+    removeService(serviceOne, washCarBtn);
+    removeService(serviceTwo, mowLawnBtn);
+    removeService(serviceThree, pullWeedsBtn);
+
+    serviceList = [];
+    totalPrice = 0;
+    totalAmount.textContent = `$${totalPrice}`
+});
 
 
