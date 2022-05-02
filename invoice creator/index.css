@@ -105,10 +105,8 @@ h1, h2, p {
     margin-right: .1em;
 }
 
-#serviceOne,
-#serviceTwo,
-#serviceThree {
-    visibility: hidden;
+.visibility {
+    display: none;
 }
 
 .sum-container {
@@ -123,6 +121,7 @@ h1, h2, p {
 }
 
 .note-text {
+    margin-bottom: var(--spacing);
     font-size: .8rem;
 }
 
@@ -174,7 +173,7 @@ h1, h2, p {
 }
 
 .btn-big {
-    margin-block: var(--spacing);
+    margin-bottom: var(--spacing);
     width: 100%;
     background-color: var(--bg-light);
     color: var(--font-light);
