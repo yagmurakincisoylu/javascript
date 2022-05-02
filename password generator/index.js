@@ -7,15 +7,17 @@ const passLength = document.getElementById("passLength")
 const output = document.getElementById("output")
 const tooltipText = document.querySelectorAll(".tooltip-text");
 
-passLength.oninput = function() {
-    output.textContent = this.value;
-}
+passLength.addEventListener("input", () => {
+    output.textContent = passLength.value;
+});
+
+console.log(typeof passLength.value)
 
 const generatePassword = (password) => {
-    let length = Number(passLength.value),
-        retVal = "",
+    const length = Number(passLength.value),
         startPoint = 33,
         endPoint = 127;
+    let retVal = "";
     for(let i = 0; i < length; i++){
         retVal += String.fromCharCode((Math.floor(Math.random() * (endPoint - startPoint)) + startPoint));
     }
@@ -24,56 +26,57 @@ const generatePassword = (password) => {
     for (let i = 0; i < tooltipText.length; i++) {
         tooltipText[i].textContent = `Copy`;
     }
-}
+};
 
 genBtn.addEventListener("click", () => {
     generatePassword(passOne);
     generatePassword(passTwo);
     generatePassword(passThree);
     generatePassword(passFour);
-})
+});
 
 const copyPass = (passID, i) => {
     passID.select();
     passID.setSelectionRange(0, 99999);
-
     navigator.clipboard.writeText(passID.value);
+};
 
-    tooltipText[i].textContent = `Copied`;
+const resetCopiedText = (n) => {
+    for (let i = 0; i < tooltipText.length; i++) {
+        tooltipText[i].textContent = `Copy`;
+    }
+    
+    tooltipText[n].textContent = `Copied`;
 }
 
 passOne.addEventListener("click", () => {
     const copyText = document.getElementById("passOne");
-    copyPass(copyText, 0);
-
-    tooltipText[1].textContent = `Copy`;
-    tooltipText[2].textContent = `Copy`;
-    tooltipText[3].textContent = `Copy`;
-})
+    const indexNumber = 0;
+    copyPass(copyText, indexNumber);
+    resetCopiedText(indexNumber);
+});
 
 passTwo.addEventListener("click", () => {
     const copyText = document.getElementById("passTwo");
-    copyPass(copyText, 1);
-
-    tooltipText[0].textContent = `Copy`;
-    tooltipText[2].textContent = `Copy`;
-    tooltipText[3].textContent = `Copy`;
-})
+    const indexNumber = 1;
+    copyPass(copyText, indexNumber);
+    resetCopiedText(indexNumber);
+});
 
 passThree.addEventListener("click", () => {
     const copyText = document.getElementById("passThree");
-    copyPass(copyText, 2);
-
-    tooltipText[0].textContent = `Copy`;
-    tooltipText[1].textContent = `Copy`;
-    tooltipText[3].textContent = `Copy`;
-})
+    const indexNumber = 2;
+    copyPass(copyText, indexNumber);
+    resetCopiedText(indexNumber);
+});
 
 passFour.addEventListener("click", () => {
     const copyText = document.getElementById("passFour");
-    copyPass(copyText, 3);
+    const indexNumber = 3;
+    copyPass(copyText, indexNumber);
+    resetCopiedText(indexNumber);
+});
 
-    tooltipText[0].textContent = `Copy`;
-    tooltipText[1].textContent = `Copy`;
-    tooltipText[2].textContent = `Copy`;
-})
+
+
+
