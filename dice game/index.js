@@ -85,6 +85,7 @@ const rollDice = (arr, number) => {
 		catAnimation();
 	} else if (player1Score >= 20 && player2Score >= 20 && player1Score === player2Score) {
 		message.textContent = `It's a draw! 😤`;
+		btnVisibility();
 	}
 };
 
