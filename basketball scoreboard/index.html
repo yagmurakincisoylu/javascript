@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <title>Basketball Scoreboard
+  </title>
+</head>
+<body>
+  <div class="container">
+    <div class="score-container">
+      <div class="home">
+        <h3>Home</h3>
+        
+        <div class="score" id="homeScoreEl"></div>
+
+        <div class="btn-container">
+          <button class="btn" onclick="incrementHomeScore(this)" value="1">+1</button>
+          <button class="btn" onclick="incrementHomeScore(this)" value="2">+2</button>
+          <button class="btn" onclick="incrementHomeScore(this)" value="3">+3</button>
+        </div>
+      </div>
+  
+      <div class="guest">
+        <h3>Guest</h3>
+        
+        <div class="score" id="guestScoreEl"></div>
+
+        <div class="btn-container">
+          <button class="btn" onclick="incrementGuestScore(this)" value="1">+1</button>
+          <button class="btn" onclick="incrementGuestScore(this)" value="2">+2</button>
+          <button class="btn" onclick="incrementGuestScore(this)" value="3">+3</button>
+        </div>
+      </div>  
+    </div>
+    <button class="btn btn-newGame" id="newGameBtn">New Game</button>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
