@@ -1,0 +1,54 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #dedede;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+header {
+  background-color: teal;
+  padding: 1.5em;
+  color: #dedede;
+  position: sticky;
+  top: 0;
+}
+
+form {
+  display: grid;
+  max-width: 400px;
+  margin: 1.5em auto;
+}
+
+form > div {
+  display: grid;
+  margin-bottom: 1em;
+}
+
+input, textarea, button {
+  font-family: inherit;
+}
+
+button {
+  display: inline-block;
+  padding: .5em 2em;
+  margin-left: auto;
+}
+
+.blog-post {
+  padding: 2em;
+}
+
+.blog-post > h3 {
+  text-transform: capitalize;
+  margin-bottom: .5em;
+  font-weight: 500;
+}
