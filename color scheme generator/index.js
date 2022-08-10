@@ -25,7 +25,6 @@ getSchemeBtn.addEventListener("click", async (event) => {
 function copyColorValue(element) {
   let value = element.children[1].textContent;
   navigator.clipboard.writeText(value);
-  console.log(value);
 
   tooltip.style.display = "block";
 
