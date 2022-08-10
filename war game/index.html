@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <title>War Game</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>War Game</h1>
+      <h2 id="scoresInfoText">Click New Deck to start the game</h2>
+      <p>Remaining Cards <span id="remainingCardsEl" class="remaining-cards">0</span></p>
+    </header>
+  
+    <div class="cards-container">
+      <div class="score-container">
+        <p>Computer Score <span id="computerScoreText">0</span></p>
+        <p>Player Score <span id="playerScoreText">0</span></p>
+      </div>
+
+      <div id="cards" class="cards">
+        <div class="card-placeholder"></div>
+        <div class="card-placeholder"></div>
+      </div>
+    </div>
+    
+    <div class="button-container">
+      <button id="newDeckBtn">New Deck</button>
+      <button id="newCardBtn">Draw New Card</button>
+    </div>
+  </div>
+    
+  <script src="index.js"></script>
+</body>
+</html>
