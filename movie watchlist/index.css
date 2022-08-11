@@ -23,12 +23,26 @@ h1, h2, h3, p {
   margin: 0;
 }
 
-.hidden {
-  display: none;
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+.btn {
+  background-color: transparent;
+  display: flex;
+  border: none;
+  gap: 7px;
+  color: #111827;
+  cursor: pointer;
+  padding: 5px;
+  justify-content: center;
+  font-size: .8rem;
 }
 
 .container {
-  width: 550px;
+  width: 600px;
   margin: 0 auto;
   background-color: #ffffff;
   position: relative;
@@ -49,7 +63,7 @@ h1, h2, h3, p {
 .content {
   z-index: 1000;
   position: relative;
-  width: 450px;
+  width: 500px;
   margin: 0 auto;
 }
 
@@ -62,9 +76,6 @@ header .title-container {
 }
 
 header a {
-  font-family: inherit;
-  color: inherit;
-  text-decoration: none;
   font-size: .75rem;
   font-weight: 700;
 }
@@ -75,7 +86,7 @@ header a {
   right: 0;
   top: 182px;
   display: flex;
-  width: 450px;
+  width: 500px;
   height: 36px;
 }
 
@@ -90,15 +101,17 @@ header a {
   font-family: inherit;
   color: inherit;
   text-indent: 2em;
+  outline: none;
 }
 
-.search-form button {
+.search-form > #searchBtn {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   width: 25%;
   font-family: inherit;
   font-weight: 500;
   background-color: #e3e7ec;
+  cursor: pointer;
 }
 
 .placeholder-container {
@@ -114,6 +127,13 @@ header a {
   justify-self: center;
 }
 
+.placeholder-container .btn {
+  justify-self: center;
+  font-weight: 700;
+  margin-top: 1em;
+  font-size: .9rem;
+}
+
 .warning-text {
   width: 25ch;
   margin: 0 auto;
@@ -123,9 +143,13 @@ header a {
 .movie-container {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  margin-top: 3.5em;
+  margin-top: 1em;
   border-bottom: 1.5px solid #E5E7EB;
   padding-bottom: 1em;
+}
+
+.movie-container:first-of-type {
+  margin-top: 3.5em;
 }
 
 .movie-info {
@@ -150,60 +174,31 @@ header a {
   font-size: .75rem;
 }
 
+.movie-title img {
+  margin-left: auto;
+}
+
 .movie-category {
   display: flex;
   margin-block: .5em;
   align-items: center;
 }
 
-.movie-category button {
-  background-color: transparent;
-  display: flex;
-  border: none;
-  margin-left: 1.3em;
-  font-size: .8rem;
+.movie-category > p {
   color: #111827;
-  cursor: pointer;
-  padding: 5px;
+  font-size: .8rem;
 }
 
-.movie-category button img {
-  margin-right: 5px;
+.movie-category button {
+  margin-left: auto;
 }
 
-.movie-info p {
+.movie-info > p {
   font-size: .9rem;
   font-weight: 400;
   color: #6B7280;
 }
 
-
-/* 
-<div class="movie-list-container" id="movieListContainer">
-  <div class="movie-container" id="movieContainer">
-    <div class="movie-poster">
-      <img src="image 33.png" />
-    </div>
-    
-    <div class="movie-info">
-      <div class="movie-title">
-        <h3>Blade Runner </h3>
-        <img src="./images/star.png" />
-        <span>8.1</span>
-      </div>
-      
-      <div>
-        <p>
-          <span>164 min</span>
-          <span>Action, Drama, Sci-fi</span>
-        </p>
-        <button>
-          <img src="./images/plus.png">
-          Watchlist
-        </button>
-      </div>
-    
-      <p>A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
-    </div>
-  </div>
-</div> */
+.hidden {
+  display: none;
+}
