@@ -71,8 +71,12 @@ button:active {
   text-align: center;
 }
 
-.color-container > * {
+.color-container {
   cursor: pointer;
+}
+
+.color-container:hover p {
+  color: #008080;
 }
 
 .color {
