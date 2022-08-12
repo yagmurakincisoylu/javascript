@@ -4,7 +4,6 @@ const searchBtn = document.getElementById("searchBtn");
 const searchedMovieListContainer = document.getElementById("searchedMovieListContainer");
 const savedMovieListContainer = document.getElementById("savedMovieListContainer");
 const movieContainer = document.getElementById("movieContainer");
-const addWatchlistBtn = document.getElementById("addWatchlistBtn");
 const placeholderDivSearch = document.getElementById("placeholderDivSearch");
 const placeholderDivWatchlist = document.getElementById("placeholderDivWatchlist");
 const placeholderWarnDiv = document.getElementById("placeholderWarnDiv");
@@ -39,8 +38,7 @@ const renderMovies = id => {
   fetch(`http://www.omdbapi.com/?i=${id}&apikey=e9610482`)
     .then(response => response.json())
     .then(data => {
-      const {Title, imdbRating, Runtime, Genre, Plot, Poster} = data;
-
+      const {Title, imdbRating, Runtime, Genre, Plot, Poster, imdbID} = data;
       const newDiv = document.createElement("div");
       newDiv.classList.add("movie-container");
       newDiv.innerHTML = `
@@ -55,7 +53,8 @@ const renderMovies = id => {
           
             <div class="movie-category">
               <p>${Runtime} ${Genre}</p>
-              <button class="btn" id="addWatchlistBtn" onclick="addWatchlist(this)">
+              <button class="btn" onclick="addWatchlist(this)"
+              data-movie-id="${imdbID}">
                 <img src="./images/plus.png">
                 Watchlist
               </button>
@@ -69,9 +68,70 @@ const renderMovies = id => {
     })
 }
 
+const elementIdArray = [];
+
 function addWatchlist(element) {
-  //placeholderDivWatchlist.classList.add("hidden");
-  const grandGrandParentElement = element.parentElement.parentElement.parentElement;
+  element.disabled = true;
+  element.innerHTML = `<img src="./images/added.png" class="icon"/>Added`;
+  const elementId = element.getAttribute("data-movie-id")
+  elementIdArray.push({id: elementId, hasAdded: true});
+  localStorage.setItem("movieIdsArray", JSON.stringify(elementIdArray));
+}
+
+function removeWatchlist(element) {
+  const elementId = element.getAttribute("data-movie-id");
+  const movieIdsArray = JSON.parse(localStorage.getItem("movieIdsArray"));
+  const indexOfElement = movieIdsArray.indexOf(elementId);
+  movieIdsArray.splice(indexOfElement, 1);
+  localStorage.setItem("movieIdsArray", JSON.stringify(movieIdsArray));
+  savedMovieListContainer.innerHTML = "";
+  renderWatchlist();
+}
+
+const renderWatchlist = () => {
+  
+  const movieIdsArray = JSON.parse(localStorage.getItem("movieIdsArray"));
+
+  if(movieIdsArray.length) {
+    placeholderDivWatchlist.classList.add("hidden");
+
+    for(let i = 0; i < movieIdsArray.length; i++) {
+      fetch(`http://www.omdbapi.com/?i=${movieIdsArray[i].id}&apikey=e9610482`)
+        .then(response => response.json())
+        .then(data => {
+          const {Title, imdbRating, Runtime, Genre, Plot, Poster, imdbID} = data;
+          const newDiv = document.createElement("div");
+          newDiv.classList.add("movie-container");
+          newDiv.innerHTML = `
+              <img src="${Poster}" />      
+              
+              <div class="movie-info">
+                <div class="movie-title">
+                  <h3>${Title}</h3>
+                  <img src="./images/star.png" />
+                  <span>${imdbRating}</span>
+                </div>
+              
+                <div class="movie-category">
+                  <p>${Runtime} ${Genre}</p>
+                  <button class="btn" onclick="removeWatchlist(this)"
+                  data-movie-id="${imdbID}">
+                    <img src="./images/minus.png">
+                    Remove
+                  </button>
+                </div>
+            
+                <p>${Plot}</p>
+              </div>
+          `;
+
+          savedMovieListContainer.appendChild(newDiv);
+        })
+    }
+  } else {
+    placeholderDivWatchlist.classList.remove("hidden");
+  }
 }
 
 searchForm.addEventListener("submit", searchMovie);
+renderWatchlist();
