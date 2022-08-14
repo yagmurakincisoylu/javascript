@@ -23,11 +23,6 @@ h1, h2, h3, p {
   margin: 0;
 }
 
-.icon {
-  width: 16px;
-  height: 16px;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -49,11 +44,6 @@ a {
 .btn:hover,
 .btn:focus {
   opacity: .5;
-}
-
-.btn:disabled {
-  opacity: 1;
-  cursor: not-allowed;
 }
 
 .container {
@@ -224,4 +214,13 @@ header a {
 
 .hidden {
   display: none;
+}
+
+.disabled {
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.disabled:hover {
+  opacity: 1;
 }
