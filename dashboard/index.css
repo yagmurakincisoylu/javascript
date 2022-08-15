@@ -1,0 +1,111 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, .95);
+  text-shadow: 0 0 15px rgba(0,0,0,.75);
+}
+
+p {
+  margin: 0;
+}
+
+.grid-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "coin weather"
+    "photo photo";
+}
+
+.flex-container {
+  display: flex;
+}
+
+.coin {
+  grid-area: coin;
+  margin: 2em;
+  align-self: start;
+  width: 600px;
+}
+
+.weather {
+  grid-area: weather;
+  padding-right: 2em;
+  justify-self: end;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.weather > div {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.photo {
+  grid-area: photo;
+  padding: 2em;
+  align-self: end;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+section {
+  display: none;
+  background-color: rgba(255, 255, 255, .2);
+  padding: .5em 1em;
+  width: 100%;
+}
+
+input {
+  display: none;
+}
+
+label {
+  font-weight: 500;
+  border-top: 2px solid transparent;
+  padding: .5em 1em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: rgba(255, 255, 255, .4);
+}
+
+label {
+  width: 200px;
+}
+
+label:hover {
+  color: #ffa500;
+  cursor: pointer;
+}
+
+input:checked + label {
+  border-top: 2px solid #ffa500;
+  background-color: rgba(255, 255, 255, .2);
+}
+
