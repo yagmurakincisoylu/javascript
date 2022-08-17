@@ -1,0 +1,86 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: #DEDEDE;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+.container {
+  width: 550px;
+  aspect-ratio: 1;
+  background-color: #282D35;
+}
+
+header {
+  height: 20%;
+  background-color: #21222A;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #DEEBF8;
+  padding: .5em 1.5em;
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: .7rem;
+  letter-spacing: -1px;
+  color: #61DAFB;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+main {
+  background-image: url(./images/background-image.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+  height: 80%;
+  padding: 3em 1.5em;
+  color: #FFFFFF;
+}
+
+main h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: -0.05em;
+}
+
+main ul {
+  max-width: 400px;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-left: 1.5em;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+li::marker {
+  color: #61DAFB;
+  font-size: 1.5rem;
+}
+
+
