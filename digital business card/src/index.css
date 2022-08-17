@@ -1,0 +1,111 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: #DEDEDE;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover,
+.link:hover {
+  opacity: .85;
+}
+
+.container {
+  width: 317px;
+  background-color: #1A1B21;
+  border-radius: 13px;
+}
+
+.info {
+  text-align: center;
+}
+
+.info--text,
+.about,
+.links div {
+  width: 250px;
+  margin: 0 auto;
+  padding-block: 1em;
+}
+
+.info--text h1 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #FFFFFF;
+}
+
+.info--text p:first-of-type {
+  color: #F3BF99;
+  font-size: .85rem;
+  margin-top: .5em;
+}
+
+.info--text p:last-of-type {
+  color: #F5F5F5;
+  font-size: .75rem;
+  margin-block: 1.3em;
+}
+
+.info--text button {
+  width: 100%;
+  border-radius: 6px;
+  padding-block: .65em;
+  font-weight: 500;
+  font-size: .9rem;
+  background-color: #E0E4EB;
+}
+
+button img {
+  margin-right: 10px;
+}
+
+.about div:first-of-type {
+  margin-bottom: 1.5em;
+}
+
+.about h2 {
+  color: #F5F5F5;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 24px;
+}
+
+.about p {
+  color: #DCDCDC;
+  font-size: .7rem;
+  line-height: 18px;
+}
+
+.links {
+  background-color: #161619;
+  border-end-start-radius: 10px;
+  border-end-end-radius: 10px;
+}
+
+.links div {
+  display: flex;
+  justify-content: space-around;
+}
+
