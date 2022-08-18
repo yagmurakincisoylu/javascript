@@ -1,0 +1,51 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #000000;
+  background-color: #dedede;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.contact-container {
+  display: inline-block;
+  margin: 1em;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, .2);
+  max-width: 250px;
+  padding: .8em;
+  border-radius: 15px;
+}
+
+.contact-card > img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.info-group {
+  display: flex;
+  align-items: center;
+  font-size: .75rem;
+  gap: 10px;
+  margin-bottom: 5px;
+  color: #555555;
+}
+
+.info-group > img {
+  width: 13px;
+}
+
+.info-group > p {
+  margin: 0;
+}
