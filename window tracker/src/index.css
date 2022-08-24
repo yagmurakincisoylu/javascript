@@ -1,0 +1,31 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 300px;
+  margin: 2em auto;
+  padding: 1em;
+  box-shadow: 5px 5px 15px rgba(37, 29, 1, 0.5);
+  text-align: center;
+}
+
+button {
+  outline: none;
+  border: none;
+  padding: .5em 1em;
+  background-color: #ffb834;
+  color: rgba(255, 255, 255, .95);
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f7b335;
+}
