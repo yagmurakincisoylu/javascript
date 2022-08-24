@@ -1,0 +1,64 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: #67207c;
+}
+
+.form-container {
+  margin: 1em auto;
+  background-color: #fafafa;
+  width: 375px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, .5);
+  padding: 2.5em 2em;
+}
+
+
+input {
+  width: 100%;
+  margin-bottom: 1.5em;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid gray;
+  padding: .8em;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+  width: unset;
+}
+
+label {
+  margin-left: 1em;
+}
+
+button {
+  width: 125px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #67207c;
+  color: white;
+  font-family: inherit;
+  padding-block: .5em;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin: 1.5em auto 0;
+}
+
+button:hover {
+  background-color: #703183;
+}
