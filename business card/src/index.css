@@ -1,0 +1,51 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: whitesmoke;
+  color: #333333;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  min-height: auto;
+}
+
+.card-container {
+  margin: 2em auto;
+  padding: .8em;
+  max-width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+  border: 1px solid lightgray;
+}
+
+.star-icon {
+  width: 25px;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+h2 {
+  margin-block: .8em;
+}
+
+p {
+  margin: 0;
+  font-size: .75rem;
+  color: gray;
+}
+
+p + p {
+  margin-bottom: 1em;
+}
