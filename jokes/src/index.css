@@ -1,0 +1,50 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+.joke {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5em 2em;
+  height: 100px;
+  border-bottom: #ffbe46 solid 3px;
+  position: relative;
+  display: grid;
+  place-content: center;
+}
+
+.joke h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.joke p {
+  font-size: 1.1rem;
+}
+
+button {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  width: 100px;
+  height: 25px;
+  font-family: inherit;
+  background-color: #ffbe46;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-block: 1.5em;
+  letter-spacing: .3ch;
+  position: absolute;
+  bottom: -22px;
+  left: 50px;
+}
+
+button:hover {
+  background-color: #ffcd6f;
+}
