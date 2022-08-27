@@ -1,0 +1,127 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: whitesmoke;
+  font-weight: 300;
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  width: 550px;
+  background-color: white;
+  margin: 3em auto;
+}
+
+header {
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  color: white;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.logo {
+  width: 30px;
+  margin-right: .5em;
+}
+
+header p {
+  font-weight: 500;
+  font-size: .9rem;
+}
+
+form {
+  padding: 1em 1.2em;
+}
+
+.input-container {
+  justify-content: space-between;
+}
+
+input {
+  width: 240px;
+  height: 35px;
+  text-indent: .75em;
+  border: 1px solid #D5D4D8;
+  border-radius: 5px;
+  font-family: inherit;
+  color: black;
+  font-size: .9rem;
+}
+
+button {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  margin-top: 1.2em;
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  font-family: inherit;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  padding-block: .75em;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: linear-gradient(90.41deg, #A818DA 1.14%, #711F8D 100%);
+}
+
+.meme-container {
+  position: relative;
+}
+
+.meme-img {
+  max-width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+.top-text,
+.bottom-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow:
+      2px 2px 0 #000,
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      0 2px 0 #000,
+      2px 0 0 #000,
+      0 -2px 0 #000,
+      -2px 0 0 #000,
+      2px 2px 5px #000;
+}
+
+.top-text {
+  top: 0;
+}
+
+.bottom-text {
+  bottom: 0;
+}
