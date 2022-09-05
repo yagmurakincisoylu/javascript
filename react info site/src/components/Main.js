@@ -1,6 +1,6 @@
-function Main() {
+function Main({darkMode}) {
   return (
-    <main>
+    <main className={darkMode ? "dark" : ""}>
       <h2>Fun facts about React</h2>
       <ul>
         <li>Was first released in 2013</li>
