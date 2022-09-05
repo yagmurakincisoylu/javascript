@@ -24,17 +24,21 @@ h1, h2, p {
 .container {
   width: 550px;
   aspect-ratio: 1;
-  background-color: #282D35;
 }
 
 header {
-  height: 20%;
-  background-color: #21222A;
+  height: 80px;
+  background-color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #DEEBF8;
   padding: .5em 1.5em;
+  border-bottom: 1px solid rgba(0, 0, 0, .25);
+}
+
+header.dark {
+  background-color: #21222A;
 }
 
 header > div {
@@ -52,13 +56,80 @@ header p {
   font-weight: 600;
 }
 
+.toggler {
+  display: flex;
+  align-items: center;
+}
+
+.toggler p {
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.toggler-slider {
+  width: 25px;
+  height: 15px;
+  background-color: #2B283A;
+  border-radius: 2rem;
+  margin-inline: 7px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid black;
+  box-sizing: content-box;
+}
+
+header.dark .toggler-slider {
+  border-color: #FFFFFF;
+  background-color: #F5F5F5;
+}
+
+.toggler-slider-circle {
+  height: 15px;
+  width: 15px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+header.dark .toggler-slider-circle {
+  background-color: black;
+}
+
+.toggler-light {
+  color: #2B283A;
+}
+
+header.dark .toggler-light {
+  color: #918E9B;
+}
+
+.toggler-dark {
+  color: #D5D4D8;
+}
+
+header.dark .toggler-dark {
+  color: #FFFFFF;
+}
+
+header.dark .toggler-slider {
+  justify-content: flex-end;
+}
+
 main {
-  background-image: url(./images/background-image.png);
+  background-image: url(./images/bg-light.png);
   background-repeat: no-repeat;
   background-position: center right;
-  height: 80%;
   padding: 3em 1.5em;
-  color: #FFFFFF;
+  color: #2B283A;
+  background-color: #FFFFFF;
+  
+}
+
+main.dark {
+  background-image: url(./images/bg-dark.png);
+  background-color: #282D35;
+  color: #FFFFFF; 
 }
 
 main h2 {
