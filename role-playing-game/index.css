@@ -1,0 +1,163 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #332b37;
+  background: radial-gradient(circle, rgb(172, 173, 135) 0%, rgb(71, 29, 35) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  font-family: "MedievalSharp", cursive;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.character-card {
+  min-height: 14rem;
+  max-width: 250px;
+  padding: 1em;
+  font-size: 1.6rem;
+  color: #ffffff;
+  border-radius: 14px;
+  position: relative;
+  background-color: #1c4657;
+  background: radial-gradient(rgb(69, 131, 150) 0%, rgb(28, 95, 112) 100%);
+  overflow: hidden;
+  border: 3px solid #000721;
+}
+
+.name {
+  margin: 0 0 1em;
+  letter-spacing: 0.08em;
+}
+
+.avatar {
+  width: 5em;
+  border: 2px solid #000721;
+  max-width: 100%;
+  height: 150px;
+  opacity: 0.9;
+  border-radius: 10px;
+  background-color: rgba(0, 7, 33, 0.8);
+}
+
+.health {
+  font-size: 1.1rem;
+  margin: .5em 0 2.2em;
+  color: #cccccc;
+  letter-spacing: 1px;
+  font-weight: normal;
+  margin-bottom: 1.2em;
+}
+
+.health b {
+  font-weight: bold;
+  color:#fff;
+}
+
+.health-bar-outer {
+  margin: 0 auto;
+  background-color: #000721;
+  height: 7px;
+  width: 90%;
+  border-radius: 100px;
+}
+
+.health-bar-inner {
+  background-color: #89d366;
+  height: 100%;
+  border-radius: 100px;
+}
+
+.health-bar-inner.danger {
+  background-color:#d1435f;
+}
+
+.dice-container {
+  width: 100%;
+  min-height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #044058;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  font-weight: bolder;
+}
+
+.dice, .placeholder-dice {
+  display: grid;
+  place-content: center;
+  width: 45px;
+  height: 45px;
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid;
+  color: #000721;
+}
+
+.dice-container .placeholder-dice{
+  background-color: transparent;
+}
+
+button {
+  margin-top: .7em;
+  font-family: inherit;
+  background-color: #458396;
+  border: 2px solid;
+  outline: none;
+  padding: .6em 1em;
+  font-size: 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color:#000721;
+  font-weight: 600;
+}
+
+button:focus,
+button:hover { 
+  outline: 1px solid;
+  outline-offset: -3px;
+}
+
+.end-game{
+  margin-top: 20%;
+  text-align: center;
+}
+
+.end-emoji{
+  font-size: 80px;
+  margin-top: .3em;
+}
+
+@media(min-width:550px){
+
+  .character-card {
+    min-height: 400px;
+    width: 250px;
+    max-width: 100%;
+  }
+
+  .dice-container {
+    height: 20%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 3px;
+  }
+}
