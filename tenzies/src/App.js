@@ -1,24 +1,21 @@
 import React from 'react';
-import Confetti from 'react-confetti'
+import Confetti from 'react-confetti';
 import Die from './components/Die';
 
 function App() {
 
   const [dice, setDice] = React.useState
-  (allNewDice())
+  (allNewDice());
   
-  const [tenzies, setTenzies] = React.useState(false)
+  const [tenzies, setTenzies] = React.useState(false);
 
   React.useEffect(() => {
-    const firstValue = dice[0].value
-    const allSameValue = dice.every(die => die.value === firstValue)
-    const allHeld = dice.every(die => die.isHeld)
+    const firstValue = dice[0].value;
+    const allSameValue = dice.every(die => die.value === firstValue);
+    const allHeld = dice.every(die => die.isHeld);
 
     if(allSameValue && allHeld) {
-      setTenzies(true)
-      console.log("yey")
-    } else {
-      console.log("not yet")
+      setTenzies(true);
     }
 
   }, [dice])
@@ -33,7 +30,7 @@ function App() {
   function allNewDice() {
     const newDice = [];
     for (let i = 0; i < 10; i++) {
-      newDice.push(generateNewDie())
+      newDice.push(generateNewDie());
     }
     return newDice;
   }
@@ -52,17 +49,17 @@ function App() {
   function rollDice() {
     if(!tenzies) {
       setDice(oldDice => oldDice.map(die => {
-        return die.isHeld ? die : generateNewDie()
+        return die.isHeld ? die : generateNewDie();
       }))
     } else {
-      setTenzies(false)
-      setDice(allNewDice())
+      setTenzies(false);
+      setDice(allNewDice());
     }
   }
 
   function holdDice(id) {
     setDice(oldDice => oldDice.map(die => {
-      return die.id === id ? {...die, isHeld: !die.isHeld} : die
+      return die.id === id ? {...die, isHeld: !die.isHeld} : die;
     }))
   }
 
