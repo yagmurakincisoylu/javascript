@@ -11,11 +11,12 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #1F2937;
   color: #1F2937;
+  font-size: 1rem;
 }
 
 .container {
-  width: 600px;
-  margin: 5em auto;
+  max-width: 600px;
+  margin: 0 auto;
   background-color: #F1F1F1;
   position: relative;
 }
@@ -23,14 +24,16 @@ body {
 .selection-container {
   padding: 1em;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  gap: 10px;
   align-items: center;
 }
 
-input[type="color"] {
+input[type="color" i] {
   width: 65px;
   height: 45px;
   border: .1px solid #D1D5DB;
+  cursor: pointer;
 }
 
 select,
@@ -41,10 +44,14 @@ button {
   border-radius: 8px;
   background-color: #ffffff;
   font-weight: 500;
+  display: flex;
+  place-content: center;
+  flex-wrap: wrap
 }
 
 select {
-  width: 50%;
+  max-width: 50%;
+  cursor: pointer;
 }
 
 button {
@@ -63,7 +70,7 @@ button:active {
 
 .colors-container {
   display: flex;
-  width: 100%;
+  max-width: 100%;
 }
 
 .color-container {
@@ -97,4 +104,10 @@ button:active {
   text-transform: uppercase;
   display: none;
   transition: display ease-in-out 250ms;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.8rem;
+  }
 }
